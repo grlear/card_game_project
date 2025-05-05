@@ -14,3 +14,15 @@ def create_deck():
             deck.append(rank + ' of ' + suit)
     random.shuffle(deck) #Shuffle the deck to randomize the order
     return deck
+
+#Function to deal cards to players
+def deal_cards(deck):
+    player1_hand = []
+    player2_hand = []
+    
+    for i in range(8):
+        player1_hand.append(deck.pop())
+        player2_hand.append(deck.pop())
+    
+    return player1_hand, player2_hand
+
