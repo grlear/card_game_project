@@ -36,3 +36,17 @@ def compare_cards(card1, card2):
     else:
         return False  #If suits are different, Player 2 wins the round
 
+#Function to get a valid card from a player
+def get_valid_card(player_hand, player_number):
+    while True:
+        print("Player " + str(player_number) + " Hand: " + str(player_hand))
+        rank = input("Player " + str(player_number) + ", enter the RANK of your card: ")
+        suit = input("Player " + str(player_number) + ", enter the SUIT of your card: ")
+        card = (rank, suit)
+        if card in player_hand:
+            player_hand.remove(card)
+            print("Player " + str(player_number) + " plays: " + str(card))
+            return card
+        else:
+            print("Invalid card. Please enter a valid rank and suit from your hand.")
+
