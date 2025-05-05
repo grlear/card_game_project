@@ -1,0 +1,14 @@
+#Tricksy Battle Card Game
+
+Tricksy Battle is a simple two-player card game based on a standard deck of 48 cards (Ace, 2 through 10, Jack, Queen, excluding the King) from four suits: Hearts, Diamonds, Clubs, and Spades. The game tests players' strategies and card-playing skills while adhering to a set of simple rules.
+
+##Objective
+
+The main objective of the game is to score points by winning rounds, with the winner being the player who accumulates the most points. A player needs to score 9 points to win unless the game ends 16-0 (where the losing player has “shot the moon” and automatically wins with 17 points).
+
+##Features
+
+- Deck Creation: A deck of 48 cards is created with four suits (Hearts, Diamonds, Clubs, and Spades) and twelve ranks (Ace, 2-10, Jack, Queen).
+- Shuffling: The deck is shuffled to randomize the order of the cards.
+- Card Dealing: Each player is dealt 8 cards at the start of the game.
+- Card Comparison: The cards are compared based on their rank. The higher rank wins the round, unless the suits differ, in which case Player 2 wins.
