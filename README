@@ -1,14 +1,54 @@
-#Tricksy Battle Card Game
+# Tricksy Battle Card Game
 
 Tricksy Battle is a simple two-player card game based on a standard deck of 48 cards (Ace, 2 through 10, Jack, Queen, excluding the King) from four suits: Hearts, Diamonds, Clubs, and Spades. The game tests players' strategies and card-playing skills while adhering to a set of simple rules.
 
-##Objective
+# Objective
 
 The main objective of the game is to score points by winning rounds, with the winner being the player who accumulates the most points. A player needs to score 9 points to win unless the game ends 16-0 (where the losing player has “shot the moon” and automatically wins with 17 points).
 
-##Features
+# Features
 
 - Deck Creation: A deck of 48 cards is created with four suits (Hearts, Diamonds, Clubs, and Spades) and twelve ranks (Ace, 2-10, Jack, Queen).
 - Shuffling: The deck is shuffled to randomize the order of the cards.
 - Card Dealing: Each player is dealt 8 cards at the start of the game.
 - Card Comparison: The cards are compared based on their rank. The higher rank wins the round, unless the suits differ, in which case Player 2 wins.
+- Get Valid Card: The game ensures players can only play valid cards by checking their card's rank and suit against the player's hand before allowing the card to be played.
+
+# How to Play
+
+1. Setup:
+   - When the game starts, a deck of 48 cards is created and shuffled. 
+   - Each player is dealt 8 cards, and the game randomly selects who leads the first round.
+   
+2. Gameplay:
+   - The game proceeds in rounds, where players take turns to play one card each from their hand.
+   - Players are prompted to select a valid card by specifying the rank and suit.
+   - If a player plays an invalid card (one that is not in their hand), they are asked to choose again.
+   
+3. Card Comparison:
+   - Cards are compared based on their rank (Ace being the highest, followed by 2 through Queen).
+   - If the suits of the cards match, the card with the higher rank wins the round. If the suits differ, Player 2 automatically wins the round.
+
+4. Scoring:
+   - The winner of each round scores a point.
+   - The game continues for 16 rounds or until a player reaches 9 points.
+   - If the game ends with a score of 16-0, the losing player has "shot the moon," and the winning player automatically gets 17 points.
+
+5. End of Game:
+   - After 16 rounds or if a player reaches 9 points, the game ends.
+   - The player with the most points wins.
+   - If the game is tied at the end, it is declared a draw.
+
+# How to Run the Game
+
+1. Open a terminal.
+2. Navigate to the project directory.
+3. Run the game with: "python game.py"
+4. Follow the on-screen prompts to enter card ranks and suits.
+
+# Helpful Notes
+
+- Each player is dealt 8 cards.
+- Players take turns selecting a card to play each round.
+- Cards of the same suit are compared by rank; if suits differ, Player 2 wins that round.
+- First to 9 points wins, unless a player loses 0–16 (then they "shoot the moon" and win with 17 points).
