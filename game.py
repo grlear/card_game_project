@@ -50,3 +50,60 @@ def get_valid_card(player_hand, player_number):
         else:
             print("Invalid card. Please enter a valid rank and suit from your hand.")
 
+def play_game():
+    #Initialize the deck and deal cards to both players
+    deck = create_deck()
+    player1_hand, player2_hand = deal_cards(deck)
+    
+    #Player scores
+    player1_score = 0
+    player2_score = 0
+    
+    #Determine who leads first (random)
+    current_leader = random.choice([1, 2])
+    print("Player " + str(current_leader) + " will lead the first round.")
+
+    #Game loop
+    round_counter = 0
+    while round_counter < 16:
+        round_counter += 1
+        print("\nRound " + str(round_counter) + ":")
+        
+        if current_leader == 1:
+            print("Player 1's turn")
+            card1 = get_valid_card(player1_hand, 1)
+            
+            print("\nPlayer 2's turn")
+            card2 = get_valid_card(player2_hand, 2)
+
+        else:
+            print("Player 2's turn")
+            card2 = get_valid_card(player2_hand, 2)
+            
+            print("\nPlayer 1's turn")
+            card1 = get_valid_card(player1_hand, 1)
+
+        #Determine the winner of the round
+        if compare_cards(card1, card2):
+            print("Player 1 wins the round!")
+            player1_score += 1
+            current_leader = 1
+        else:
+            print("Player 2 wins the round!")
+            player2_score += 1
+            current_leader = 2
+
+    #Final scores
+    print("\n--- Final Score ---")
+    print("Player 1: " + str(player1_score))
+    print("Player 2: " + str(player2_score))
+
+    if player1_score > player2_score:
+        print("Player 1 wins the game!")
+    elif player2_score > player1_score:
+        print("Player 2 wins the game!")
+    else:
+        print("The game is a tie!")
+
+if __name__ == "__main__":
+    play_game()
