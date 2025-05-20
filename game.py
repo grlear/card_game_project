@@ -1,4 +1,6 @@
 import random
+import time
+
 
 #List of card ranks
 card_ranks = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen']
@@ -63,6 +65,9 @@ def play_game():
     current_leader = random.choice([1, 2]) #Advanced Topic: Randomly select who leads first
     print("Player " + str(current_leader) + " will lead the first round.")
 
+    #Advanced Topic: Start measuring CPU time
+    start_time = time.process_time()
+    
     #Game loop
     round_counter = 0
     while round_counter < 16:
@@ -92,6 +97,16 @@ def play_game():
             print("Player 2 wins the round!")
             player2_score += 1
             current_leader = 2
+
+        #Advanced Topic: Time module: add timestamp and sleep
+        timestamp = time.strftime("%Y-%m-%d", time.localtime())
+        print("Round timestamp: " + timestamp)
+        time.sleep(0.5)
+
+    #Advanced Topic: End timing
+    end_time = time.process_time()
+    total_time = end_time - start_time
+    print("\nTotal CPU time: " + str(round(total_time, 4)) + " seconds")
 
     #Final scores
     print("\n--- Final Score ---")
