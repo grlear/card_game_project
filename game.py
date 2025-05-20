@@ -12,7 +12,7 @@ def create_deck():
     for suit in suits:
         for rank in card_ranks:
             deck.append((rank, suit))  #Store cards as tuples (rank, suit)
-    random.shuffle(deck)  #Shuffle the deck to randomize the order
+    random.shuffle(deck)  ##Advanced Topic: Shuffle the deck to randomize the order
     return deck
 
 #Function to deal cards to players
@@ -60,7 +60,7 @@ def play_game():
     player2_score = 0
     
     #Determine who leads first (random)
-    current_leader = random.choice([1, 2])
+    current_leader = random.choice([1, 2]) #Advanced Topic: Randomly select who leads first
     print("Player " + str(current_leader) + " will lead the first round.")
 
     #Game loop
