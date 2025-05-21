@@ -10,6 +10,7 @@ suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
 
 #Function to create a deck of cards
 def create_deck():
+    "Create and return a shuffled deck of 48 cards."
     deck = []
     for suit in suits:
         for rank in card_ranks:
@@ -19,6 +20,7 @@ def create_deck():
 
 #Function to deal cards to players
 def deal_cards(deck):
+    "Deal 8 cards to each player from the deck and return two hands."
     player1_hand = []
     player2_hand = []
     
@@ -30,6 +32,7 @@ def deal_cards(deck):
 
 #Function to compare cards and decide the round winner
 def compare_cards(card1, card2):
+    "Compare two cards and return True if Player 1 wins, else False."
     rank_order = {'Ace': 14, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9, '10': 10, 'Jack': 11, 'Queen': 12}
     
     #Compare suits first, if suits are the same, compare ranks
@@ -40,6 +43,7 @@ def compare_cards(card1, card2):
 
 #Function to get a valid card from a player
 def get_valid_card(player_hand, player_number):
+    "Prompt the player for a valid card from their hand and return it."
     while True:
         print("Player " + str(player_number) + " Hand: " + str(player_hand))
         rank = input("Player " + str(player_number) + ", enter the RANK of your card: ")
@@ -53,6 +57,7 @@ def get_valid_card(player_hand, player_number):
             print("Invalid card. Please enter a valid rank and suit from your hand.")
 
 def play_game():
+    "Run the full Tricksy Battle game with timing, scoring, input, and output."
     #Initialize the deck and deal cards to both players
     deck = create_deck()
     player1_hand, player2_hand = deal_cards(deck)
